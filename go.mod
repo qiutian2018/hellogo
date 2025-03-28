@@ -1,6 +1,6 @@
 module hellogo
 
-go 1.23.0
+go 1.21.5
 
 require (
 	github.com/bytedance/sonic v1.11.6 // indirect
