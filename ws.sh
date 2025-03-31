@@ -8,16 +8,16 @@ which go
 echo "*****path info:" $PATH
 go version
 go mod download
-go build -o myapp .
+go build -o wsapp ./ws.go
 echo "current pwd:$(pwd)"
-nohup ./myapp < /dev/null > app.log 2>&1 &
+nohup ./wsapp < /dev/null > wsapp.log 2>&1 &
 disown $!
-ps aux | grep myapp
+ps aux | grep wsapp
 sleep 5
 echo "---------"
 whoami
-ps aux | grep myapp
-curl http://localhost:9003/hello | jq
+ps aux | grep wsapp
+curl http://localhost:9002/json | jq
 #exit 0
 echo "-----2-----"
-curl http://localhost:9003/hello | jq
+curl http://localhost:9002/json | jq
